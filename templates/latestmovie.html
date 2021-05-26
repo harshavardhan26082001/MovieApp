@@ -1,0 +1,269 @@
+{% load static %}
+
+<section class="monthly-picks-area section-padding-100 bg-pattern">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="left-right-pattern"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <!-- Title -->
+                <h2 class="section-title mb-70 wow fadeInUp" data-wow-delay="100ms">LATEST MOVIES AND SERIES</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <ul class="nav nav-tabs wow fadeInUp" data-wow-delay="300ms" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="popular-tab" data-toggle="tab" href="#popular" role="tab"
+                           aria-controls="popular" aria-selected="true">Latest Movies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="latest-tab" data-toggle="tab" href="#latest" role="tab"
+                           aria-controls="latest" aria-selected="false">Latest Series</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="editor-tab" data-toggle="tab" href="#editor" role="tab"
+                           aria-controls="editor" aria-selected="false">AOE Originals</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-content wow fadeInUp" data-wow-delay="500ms" id="myTabContent">
+        <div class="tab-pane fade show active" id="popular" role="tabpanel" aria-labelledby="popular-tab">
+            <!-- Popular Games Slideshow -->
+            <div class="popular-games-slideshow owl-carousel">
+
+                {% for m in tmvobjten %}
+
+                    <!-- Single Games -->
+                    <div class="single-games-slide">
+                        <a href="{% url 'movie_details' m.id %}"><img src="http://image.tmdb.org/t/p/original/{{ m.poster_path }}" alt=""></a>
+                        <div class="slide-text">
+                            <a href="#" class="game-title">{{ m.title }}</a>
+                            <!-- <div class="meta-data">
+                                <a href="#">{{m.imdb_rating}}</a>
+                                <a href="#">{{m.movie_type}}</a>
+                            </div> -->
+                        </div>
+                    </div>
+
+                {% endfor %}
+
+
+            </div>
+        </div>
+        <div class="tab-pane fade" id="latest" role="tabpanel" aria-labelledby="latest-tab">
+            <!-- Latest Games Slideshow -->
+            <div class="latest-games-slideshow owl-carousel">
+
+                <!-- Single Games -->
+                <div class="single-games-slide">
+                    <img src="{% static 'images/50.jpg' %}" alt="">
+                    <div class="slide-text">
+                        <a href="#" class="game-title">Grand Theft Auto V</a>
+                        <div class="meta-data">
+                            <a href="#">User: 9.1/10</a>
+                            <a href="#">Action</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Games -->
+                <div class="single-games-slide">
+                    <img src="{% static 'images/51.jpg' %}" alt="">
+                    <div class="slide-text">
+                        <a href="#" class="game-title">Doom</a>
+                        <div class="meta-data">
+                            <a href="#">User: 9.1/10</a>
+                            <a href="#">Adventure</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Games -->
+                <div class="single-games-slide">
+                    <img src="{% static 'images/52.jpg' %}" alt="">
+                    <div class="slide-text">
+                        <a href="#" class="game-title">God of War</a>
+                        <div class="meta-data">
+                            <a href="#">User: 9.1/10</a>
+                            <a href="#">Action</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Games -->
+                <div class="single-games-slide">
+                    <img src="{% static 'images/53.jpg' %}" alt="">
+                    <div class="slide-text">
+                        <a href="#" class="game-title">Bloodborne</a>
+                        <div class="meta-data">
+                            <a href="#">User: 9.1/10</a>
+                            <a href="#">Adventure</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Games -->
+                <div class="single-games-slide">
+                    <img src="{% static 'images/54.jpg' %}" alt="">
+                    <div class="slide-text">
+                        <a href="#" class="game-title">Persona 5</a>
+                        <div class="meta-data">
+                            <a href="#">User: 9.1/10</a>
+                            <a href="#">Action</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Games -->
+                <div class="single-games-slide">
+                    <img src="{% static 'images/52.jpg' %}" alt="">
+                    <div class="slide-text">
+                        <a href="#" class="game-title">God of War</a>
+                        <div class="meta-data">
+                            <a href="#">User: 9.1/10</a>
+                            <a href="#">Action</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Games -->
+                <div class="single-games-slide">
+                    <img src="{% static 'images/53.jpg' %}" alt="">
+                    <div class="slide-text">
+                        <a href="#" class="game-title">Bloodborne</a>
+                        <div class="meta-data">
+                            <a href="#">User: 9.1/10</a>
+                            <a href="#">Adventure</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Games -->
+                <div class="single-games-slide">
+                    <img src="{% static 'images/54.jpg' %}" alt="">
+                    <div class="slide-text">
+                        <a href="#" class="game-title">Persona 5</a>
+                        <div class="meta-data">
+                            <a href="#">User: 9.1/10</a>
+                            <a href="#">Action</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="tab-pane fade" id="editor" role="tabpanel" aria-labelledby="editor-tab">
+            <!-- Editor Games Slideshow -->
+            <div class="editor-games-slideshow owl-carousel">
+
+                <!-- Single Games -->
+                <div class="single-games-slide">
+                    <img src="{% static 'images/50.jpg' %}" alt="">
+                    <div class="slide-text">
+                        <a href="#" class="game-title">Grand Theft Auto V</a>
+                        <div class="meta-data">
+                            <a href="#">User: 9.1/10</a>
+                            <a href="#">Action</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Games -->
+                <div class="single-games-slide">
+                    <img src="{% static 'images/51.jpg' %}" alt="">
+                    <div class="slide-text">
+                        <a href="#" class="game-title">Doom</a>
+                        <div class="meta-data">
+                            <a href="#">User: 9.1/10</a>
+                            <a href="#">Adventure</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Games -->
+                <div class="single-games-slide">
+                    <img src="{% static 'images/52.jpg' %}" alt="">
+                    <div class="slide-text">
+                        <a href="#" class="game-title">God of War</a>
+                        <div class="meta-data">
+                            <a href="#">User: 9.1/10</a>
+                            <a href="#">Action</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Games -->
+                <div class="single-games-slide">
+                    <img src="{% static 'images/53.jpg' %}" alt="">
+                    <div class="slide-text">
+                        <a href="#" class="game-title">Bloodborne</a>
+                        <div class="meta-data">
+                            <a href="#">User: 9.1/10</a>
+                            <a href="#">Adventure</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Games -->
+                <div class="single-games-slide">
+                    <img src="{% static 'images/54.jpg' %}" alt="">
+                    <div class="slide-text">
+                        <a href="#" class="game-title">Persona 5</a>
+                        <div class="meta-data">
+                            <a href="#">User: 9.1/10</a>
+                            <a href="#">Action</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Games -->
+                <div class="single-games-slide">
+                    <img src="{% static 'images/52.jpg' %}" alt="">
+                    <div class="slide-text">
+                        <a href="#" class="game-title">God of War</a>
+                        <div class="meta-data">
+                            <a href="#">User: 9.1/10</a>
+                            <a href="#">Action</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Games -->
+                <div class="single-games-slide">
+                    <img src="{% static 'images/53.jpg' %}" alt="">
+                    <div class="slide-text">
+                        <a href="#" class="game-title">Bloodborne</a>
+                        <div class="meta-data">
+                            <a href="#">User: 9.1/10</a>
+                            <a href="#">Adventure</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Games -->
+                <div class="single-games-slide">
+                    <img src="{% static 'images/54.jpg' %}" alt="">
+                    <div class="slide-text">
+                        <a href="#" class="game-title">Persona 5</a>
+                        <div class="meta-data">
+                            <a href="#">User: 9.1/10</a>
+                            <a href="#">Action</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

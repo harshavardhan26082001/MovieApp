@@ -1,0 +1,10 @@
+Your Picked Movie :  {{ series.name }}
+
+Select Season
+{% if episode %}
+{%  for i in season %}
+<a href="{% url 'season_details' i %}">{{i}}</a>
+{% endfor %}
+{% else %}
+    There No Season Available BITCH!
+{% endif %}
